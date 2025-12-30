@@ -17,7 +17,7 @@ pipeline {
    
         stage('Fetch code') {
             steps {
-               git branch: 'docker', url: 'https://github.com/hkhcoder/vprofile-project.git'
+               git branch: 'docker', url: 'https://github.com/DeathGod049/devops-project.git'
             }
 
         }
@@ -66,6 +66,14 @@ pipeline {
                 }
             }
         }
+
+        // stage("Quality Gate") {
+        //     steps {
+        //       timeout(time: 1, unit: 'HOURS') {
+        //         waitForQualityGate abortPipeline: true
+        //       }
+        //     }
+        //   }
 
         stage('Build App Image') {
           steps {
